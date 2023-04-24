@@ -32,7 +32,7 @@ app.use(express.json(), express.urlencoded({extended: true}));
 
 app.get('/', (req, res) => {
     const newsApi = require('newsapi');
-    const apiNews = require('./')
+    const apiNews = require('./.env')
     // const apiNews = new newsApi('28760a25597345a9b25f2e94b0d9851d');
    
     apiNews.v2.everything({
