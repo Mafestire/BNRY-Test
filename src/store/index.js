@@ -1,5 +1,6 @@
 import { createStore } from 'vuex'
 import axios from "axios";
+// import { search } from 'core-js/fn/symbol';
 const News = "http://localhost:6070/";
 
 export default createStore({
@@ -19,7 +20,10 @@ export default createStore({
     },
     getNews(state, news){
       state.news = news
-    }
+    },
+    // search(){
+
+    // }
   },
   actions: {
     async fetchNews(context){
@@ -34,6 +38,15 @@ export default createStore({
         context.commit("setMessage", "404")
       }
     },
+
+    // async searchNews(context){
+    //   console.log(search);
+    //   const res = await axios.get(`${News}`);
+    //   const response = await res.data.articles;
+    //   if(response){
+    //     context.commit()
+    //   }
+    // }
   },
   modules: {
   }

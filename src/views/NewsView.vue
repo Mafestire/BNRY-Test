@@ -1,22 +1,10 @@
 <template>
     <div class="test">
-        <div class="bars">
-            <div class="first">
-                <div class="bar1"></div>
-                <div class="bar2"></div>
-            </div>
-
-            <div class="second">
-                <div class="bar3"></div>
-                <div class="bar4"></div>
-            </div>
-        </div>
-
         <div class="welcome">
-            <div class="text">
-                <h1>TechNews</h1>
-                <h3>Find the news that you're looking for right <span>here</span> </h3>
 
+            <div class="text">
+                <img src="https://i.postimg.cc/4xS0W9Q4/shape-removebg-preview.png" alt="">
+                <h1>TechNews</h1>
             </div>
         </div>
     </div>
@@ -24,16 +12,17 @@
     <div class="news">
         <div class="cards">
             <div class="card" v-for="info in news" :key="info">
-                <p class="card-text title">{{ info.title }}</p>
+                <div class="body">
                 <img :src="info.urlToImage">
                 <div class="card-body">
                     <div class="by">
                         <p class="card-text author">{{ info.author }} |</p>
                         <p class="card-text date"><span>| </span>{{ info.publishedAt }}</p>
                     </div>
-                    <p class="card-text info">{{ info.description }}</p>
+                    <p class="card-text title">{{ info.title }}</p>
                     <button><a :href="info.url">Go to article</a></button>
                 </div>
+            </div>
             </div>
         </div>
     </div>
@@ -63,7 +52,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 /* Welcome Text */
 .welcome {
     margin-bottom: 5rem;
@@ -71,85 +60,65 @@ export default {
 
 .text h1 {
     font-size: 4rem;
-    color: #e51324;
+    margin-top: 4rem;
+    color: #2e1f21;
 }
 
 .text h3 {
     font-size: 2rem;
     color: #2e1f21;
 }
-
-.text span {
-    font-size: 3rem;
-    color: #e51324;
+    .text img {
+  width: 10rem;
+  position: absolute;
+  transform: translateX(-140%);
+  margin-top: -3rem;
+  animation: load 1s ease-in;
 }
 
-/* BackGround Bars */
-.bars {
-    transform: translateY(130%);
-}
+@keyframes load {
+  0% {
+    width: 0rem;
+  }
 
-.bar1,
-.bar3 {
-    background-color: #e51324;
-    height: 2.5rem;
-    width: 20rem;
-}
-
-.bar3 {
-    transform: translateX(25%);
-}
-
-.bars {
-    display: flex;
-
-    justify-content: space-between;
-}
-
-.bar2,
-.bar4 {
-    background-color: #2e1f21;
-    height: 2.5rem;
-    width: 25rem;
+  100% {
+    width: 10rem;
+  }
 }
 
 /* CARDS */
 
 .cards {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-    z-index: 1;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
 }
 
 .card {
-    border: 2px solid #2e1f21;
-    width: 25rem;
-    padding: 1rem;
-    font-size: 1.3rem;
-    background-color: #d4d0aa;
+    display: flex;
     color: #2e1f21;
     margin-left: auto;
     margin-right: auto;
-    
+    border: none;
+    width: 18rem;
+
 }
 
 .card:hover {
-    background-color: #2e1f21;
-    color: #e51324;
-    border: 2px solid #e51324;
-
+    background-color: #2776EA;
+    color: white;
+width: 18rem;
 }
 
 .title{ 
-    font-size: 1.8rem;
-    color: #e51324;
-    height: 7rem;
+    font-size: 1rem;
+    color: #2e1f21;
+    height: 3rem;
 }
 
 img {
-    width: 22rem;
-    height: 15rem;
+    width: 18rem;
+    height: 11rem;
     margin-left: auto;
     margin-right: auto;
 }
@@ -158,9 +127,11 @@ img {
     display: flex;
     text-align: center;
     justify-content: center;
+    height: 2rem;
+    margin-bottom: .5rem;
 }
 .author, span{
-    font-size: .9rem;
+    font-size: .7rem;
 }
  .date{
     font-size: .7rem;
@@ -172,14 +143,12 @@ img {
 }
 
 button{
-    background-color: #2e1f21;
-    transform: translateX(100%);
+    background-color: #2776EA;
+    border: none;
+    transform: translateX(90%);
 }
 
-button:hover{
-    background-color: #d4d0aa;
-    color: #2e1f21;
-}
+
 
 button a{
     color: #d4d0aa;
