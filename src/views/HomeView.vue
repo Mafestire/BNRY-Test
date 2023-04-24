@@ -10,7 +10,7 @@
 
         <div class="item">
 
-          <div class="card1" v-for="info in news" :key="info">
+          <div class="card1" v-for=" info in news" :key="info">
             <div class="img">
               <a :href="info.url"> <img :src="info.urlToImage">
               </a>
@@ -35,35 +35,35 @@
     <div class="moreNews">
       <router-link class="moreNews" to="/news">Find more News here <i class="fa-solid fa-arrow-right"></i> </router-link>
     </div>
-    
+
 
     <div class="colour">
-        <img src="https://i.postimg.cc/prjxwFBH/wave-removebg-preview.png" alt="">
-      </div>
+      <img src="https://i.postimg.cc/prjxwFBH/wave-removebg-preview.png" alt="">
+    </div>
     <div class="newsletter">
       <div class="socials">
-      <h4>And follow us on our social media platforms:</h4>
-      <p><i class="fa-brands fa-instagram"></i> | 
-        <i class="fa-brands fa-square-twitter"></i> |
-        <i class="fa-brands fa-facebook"></i>
-      </p>
-    </div>
+        <h4>And follow us on our social media platforms:</h4>
+        <p><i class="fa-brands fa-instagram"></i> |
+          <i class="fa-brands fa-square-twitter"></i> |
+          <i class="fa-brands fa-facebook"></i>
+        </p>
+      </div>
 
       <div class="letter">
-      <h1>Sign up for our NewsLetter</h1>
-      <p>to get daily updates to our leading headlines and reliable sources</p>
-      <form action="">
-        <label for="">Name</label>
-        <br>
-        <input type="text" placeholder="e.g John Bruce" required>
-        <br>
-        <label for="">Email Address</label>
-        <br>
-        <input type="text" placeholder="e.g john@somethingmail.com" required>
-        <br>
-        <button>Submit</button>
-      </form>
-    </div>
+        <h1>Sign up for our NewsLetter</h1>
+        <p>to get daily updates to our leading headlines and reliable sources</p>
+        <form action="">
+          <label for="">Name</label>
+          <br>
+          <input type="text" placeholder="e.g John Bruce" required>
+          <br>
+          <label for="">Email Address</label>
+          <br>
+          <input type="text" placeholder="e.g john@somethingmail.com" required>
+          <br>
+          <button>Submit</button>
+        </form>
+      </div>
     </div>
   </div>
 </template>
@@ -197,37 +197,37 @@ export default {
 .moreNews {
   text-decoration: none;
   font-size: 1.5rem;
-  width: 25rem;
-  transform: translateX(240%)
+  /* width: 25rem; */
+  /* transform: translateX(240%) */
 }
 
-form{
+form {
   width: 30rem;
   margin-left: auto;
   margin-right: auto;
   margin-top: 3rem;
 }
 
-form input{
+form input {
   text-align: center;
   width: 20rem;
   border: none;
   border-bottom: 1px solid #000;
 }
 
-form label{
+form label {
   font-size: 1.5rem;
-  
+
 }
 
-form button{
+form button {
   margin-top: 1rem;
   border-radius: 10%;
   color: #2776EA;
   font-size: 1.2rem;
 }
 
-.colour img{
+.colour img {
   height: 10rem;
   width: 40rem;
   margin-left: -44.7em;
@@ -235,28 +235,277 @@ form button{
   position: absolute;
 }
 
-.newsletter{
-  width: 55rem;
+.newsletter {
+  /* width: 55rem; */
   margin-bottom: 5rem;
   margin-top: 5rem;
   display: flex;
-transform: translateX(30%);
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  /* transform: translateX(30%); */
 }
 
-.newsletter .socials{
+.newsletter .socials {
   width: 20rem;
   margin-right: 5rem;
   margin-top: 1rem;
 }
 
-.socials p{
+.socials p {
   font-size: 1.5rem;
 }
 
-.letter p{
+.letter p {
   font-size: 1.2rem;
 }
 
+@media (width < 530px) {
 
+  .info h1 {
+    font-size: 2rem;
+    color: #2e1f21;
+  }
 
+  .info h3 {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    color: #2e1f21;
+  }
+
+  .info img {
+    width: 5rem;
+    position: absolute;
+    transform: translateX(-140%);
+    margin-top: -1.5rem;
+    animation: load 1s ease-in;
+  }
+
+  @keyframes load {
+  0% {
+    width: 0rem;
+  }
+
+  100% {
+    width: 5rem;
+  }
+}
+
+  .showcase .case {
+    background-color: white;
+    /* height: 100vh; */
+    transform: translateY(5%);
+    margin-left: auto;
+    margin-right: auto;
+    width: 22rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .item {
+    background-color: white;
+    width: 50rem;
+    margin-left: -12rem;
+    display: flex;
+    justify-content: space-around;
+    z-index: 2;
+    overflow: scroll;
+    flex-grow: 1;
+  }
+
+  .item .card1 {
+    width: 12rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .card1 img {
+    width: 12rem;
+  }
+
+  .newsletter {
+    /* width: 15rem; */
+    margin-bottom: 5rem;
+    margin-top: 5rem;
+    display: grid;
+    grid-template-columns: repeat(1, .5ft);
+    grid-template-rows: repeat(2, .5fr);
+    margin-left: auto;
+    
+  }
+
+  .moreNews {
+    text-decoration: none;
+    font-size: 1rem;
+    /* width: 15rem; */
+    transform: translateX(0%)
+  }
+
+  form {
+    /* width: 15rem; */
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3rem;
+  }
+
+  form input {
+    text-align: center;
+    /* width: 15rem; */
+    border: none;
+    border-bottom: 1px solid #000;
+  }
+
+  form label {
+    font-size: 1rem;
+
+  }
+
+  .newsletter .socials {
+    /* width: 15rem; */
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 4rem;
+  }
+
+  .newsletter .letter{
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .colour img {
+    height: 10rem;
+    width: 40rem;
+    margin-left: -30rem;
+    transform: translateY(220%);
+    position: absolute;
+  }
+}
+
+/* @media (width > 430px) {
+  .item .card1 {
+    width: 20rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+
+  .card1 img {
+    width: 20rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .newsletter {
+    width: 25rem;
+    margin-bottom: 5rem;
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column-reverse;
+    margin: 0 0;
+    margin-left: 3rem;
+    margin-right: auto;
+  }
+
+  .moreNews {
+    text-decoration: none;
+    font-size: 1rem;
+    width: 15rem;
+    transform: translateX(20%)
+  }
+
+  form {
+    width: 20rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3rem;
+  }
+
+  form input {
+    text-align: center;
+    width: 18rem;
+    border: none;
+    border-bottom: 1px solid #000;
+  }
+
+  form label {
+    font-size: 1.3rem;
+  }
+
+  .newsletter .socials {
+    width: 18rem;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 4rem;
+  }
+
+  .colour img {
+    height: 10rem;
+    width: 40rem;
+    margin-left: -30rem;
+    transform: translateY(250%);
+    position: absolute;
+  }
+} */
+
+@media (width < 720px) {
+  .item .card1 {
+    width: 15rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+
+  .card1 img {
+    width: 20rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .newsletter {
+    width: 28rem;
+    margin-bottom: 5rem;
+    display: grid;
+    grid-template-columns: repeat(1, .5fr);
+    grid-template-rows: repeat(2, .5fr);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .moreNews {
+    text-decoration: none;
+    font-size: 1rem;
+    width: 15rem;
+    transform: translateX(20%)
+  }
+
+  form {
+    width: 20rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3rem;
+  }
+
+  form input {
+    text-align: center;
+    width: 18rem;
+    border: none;
+    border-bottom: 1px solid #000;
+  }
+
+  form label {
+    font-size: 1.3rem;
+  }
+
+  .newsletter .socials {
+    width: 18rem;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 4rem;
+  }
+
+  .colour img {
+    height: 10rem;
+    width: 40rem;
+    margin-left: -30rem;
+    transform: translateY(250%);
+    position: absolute;
+  }
+}
 </style>

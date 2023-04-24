@@ -16,10 +16,10 @@
               <a class="nav-link" href="#"><router-link to="/news">News</router-link></a>
             </li>
           </ul>
-          <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" >
+          <!-- <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" @keypress="searchNews" aria-label="Search" v-model="searchString">
             <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
+          </form> -->
         </div>
       </div>
     </nav>
@@ -28,21 +28,40 @@
 
 <script>
 export default {
-  // computed: {
-  //   news() {
-  //     return this.$store.state.news;
-  //   },
-  // },
+  data() {
+    return {
+      searchString: "",
+      results: null
+    }
+  },
+  computed: {
+    news() {
+      return this.$store.state.news;
+    },
+  },
 
-  // methods: {
-  //   display() {
-  //     this.$store.dispatch("fetchNews")
-  //   }
+  methods: {
+    display() {
+      this.$store.dispatch("fetchNews")
+    },
+    searchNews() {
+      // validate if the input is valid 
+      if (['', null].includes(this.searchString))
+        return this.news;
 
-  // },
-  // created() {
-  //   this.display();
-  // }
+      // regular expression to filter data according to search input
+      let regexp = new RegExp(this.searchString?.toLowerCase());
+      this.results = this.news.filter(value => {
+        return regexp.test(value.title.toLowerCase());
+      });
+
+      console.log(this.results);
+    }
+
+  },
+  created() {
+    this.display();
+  }
 }
 </script>
 
@@ -61,12 +80,13 @@ export default {
 
 .nav-items {
   font-size: 1.3rem;
+  margin-left: 60rem;
 }
 
 .nav-item a {
   color: white;
   text-decoration: none;
-
+  margin-left: 2rem;
 }
 
 input,
@@ -74,4 +94,13 @@ button {
   transform: translateX(-30%);
   border: 2px solid #2e1f21;
   color: #2e1f21;
-}</style>
+}
+
+@media (width < 800px) {
+  .nav-items {
+  font-size: 1.3rem;
+  margin-left: 0rem;
+
+}
+}
+</style>

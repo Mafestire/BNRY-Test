@@ -1,7 +1,7 @@
 import { createStore } from 'vuex'
 import axios from "axios";
 // import { search } from 'core-js/fn/symbol';
-const News = "http://localhost:6070/";
+const News = "https://technews-pn4c.onrender.com";
 
 export default createStore({
   state: {
@@ -27,13 +27,13 @@ export default createStore({
   },
   actions: {
     async fetchNews(context){
-      console.log('fight');
+      // console.log('fight');
       const res = await axios.get(`${News}`);
-      console.log(res.data.articles);
+      // console.log(res.data.articles);
       const response = await res.data.articles;
       if(response){
         context.commit("setNews", response);
-        console.log('hi');
+        // console.log('hi');
       }else{
         context.commit("setMessage", "404")
       }
