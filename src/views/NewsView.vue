@@ -11,7 +11,7 @@
             <!-- search -->
             <form class="d-flex search" role="search">
                 <input class="form-control me-2" type="search" placeholder="Search" @keypress="searchNews" aria-label="Search" v-model="searchString">
-                <button class="btn btn-outline-success" type="submit">Search</button>
+                <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
             </form>
         </div>
     </div>
@@ -19,7 +19,7 @@
     <div class="news">
 
         <div class="cardz" >
-            <div class="cont" v-if="results">
+            <div class="cont" v-if="results" style="margin-bottom: 25rem;">
             <div class="card" v-for=" info in results" :key="info">
                 <div class="body">
                     <img :src="info.urlToImage">
@@ -29,12 +29,12 @@
                             <p class="card-text date"><span>| </span>{{ info.publishedAt }}</p>
                         </div>
                         <p class="card-text title">{{ info.title }}</p>
-                        <button><a :href="info.url">Go to article</a></button>
+                        <!-- <button><a :href="info.url">Go to article</a></button> -->
+                        <a :href="info.url">Go to article</a>
                     </div>
                 </div>
             </div>
         </div>
-            <p>See more</p>
         </div>
 
 
@@ -48,7 +48,8 @@
                             <p class="card-text date"><span>| </span>{{ info.publishedAt }}</p>
                         </div>
                         <p class="card-text title">{{ info.title }}</p>
-                        <button><a :href="info.url">Go to article</a></button>
+                        <!-- <button><a :href="info.url">Go to article</a></button> -->
+                        <a :href="info.url">Visit Article</a>
                     </div>
                 </div>
             </div>
@@ -112,10 +113,21 @@ export default {
 </script>
 
 <style scoped>
-/* Welcome Text */
+        /* 
+        Welcome Text 
+        */
+
+.form-control{
+    border: 1px solid #2776EA;
+    color: #2776EA;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
 .welcome {
     margin-bottom: 5rem;
     display: flex;
+    justify-content: space-around;
     width: 45rem;
     margin-left: auto;
     margin-right: auto;
@@ -152,19 +164,24 @@ export default {
     }
 }
 
-/* search */
+        /* 
+        search 
+        */
+
 .search{
     width: 20rem;
     height: 3rem;
     margin-top: 5rem;
 }
 
-/* CARDS */
+        /* 
+        CARDS 
+        */
 
 .cards, .cont {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
+    gap: 1rem;
 }
 
 .card {
@@ -174,24 +191,30 @@ export default {
     margin-right: auto;
     border: none;
     width: 18rem;
+    transition: .9s ease-out;
 }
 
 .card:hover {
     background-color: #2776EA;
     color: white;
+    transition: .7s ease-in;
 }
 
 .title {
     font-size: 1rem;
-    color: #2e1f21;
-    height: 3rem;
+    height: 4.5rem;
+    margin-bottom: 2rem;
 }
 
 img {
-    width: 18rem;
+    width: 16rem;
     height: 11rem;
     margin-left: auto;
     margin-right: auto;
+}
+
+.body{
+    padding: .5rem 1rem;
 }
 
 .by {
@@ -211,30 +234,40 @@ span {
     font-size: .7rem;
 }
 
-.info {
-    font-size: 1rem;
-    height: 10rem;
-}
-
-button {
+ a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.3rem;
     background-color: #2776EA;
     border: none;
-    transform: translateX(90%);
+    padding: .5rem;
+    font-weight: 600;
+    transition: .7s ease-out;
 }
 
-
-
-button a {
-    color: #d4d0aa;
-    text-decoration: none;
-    font-size: 1rem;
+a:hover{
+    background-color: white;
+    color: #2776EA;
+    transition: .7s ease-in;
 }
 
-@media (width < 530px) {
+@media (width < 800px) {
+
+    .welcome{
+        display: flex;
+        flex-direction: column;
+        width: 20rem;
+        margin-bottom: 2rem;
+    }
+
+    .text h1{
+        font-size: 2rem;
+        margin-top: 1.5rem;
+    }
     .cards {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
+        gap: 0rem;
         margin-left: auto;
         margin-right: auto;
     }
@@ -245,35 +278,68 @@ button a {
         margin-left: auto;
         margin-right: auto;
         border: none;
-        width: 14rem;
+        width: 11rem;
+    }
+
+    .card-body{
+        padding: 0;
+        margin-top: 1rem;
     }
 
     img {
-        width: 14rem;
-        height: 11rem;
+    width: 10rem;
+    height: 7rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+    .text img {
+        width: 5rem;
+        height: 5rem;
         margin-left: auto;
         margin-right: auto;
+        position: absolute;
+    transform: translateX(-160%);
+    margin-top: 0rem;
+    animation: load 1s ease-in;
     }
 
     .by {
         display: flex;
         flex-direction: column;
-        text-align: center;
-        justify-content: center;
         height: 2rem;
-        margin-bottom: .5rem;
+        margin-bottom: 1rem;
     }
 
-    button {
-        transform: translateX(0%);
+    .search{
+        width: 13rem;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-top: 1rem;
     }
+
+    a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    background-color: #2776EA;
+    border: none;
+    padding: .5rem;
+    font-weight: 600;
+    transition: .7s ease-out;
 }
 
-@media (width < 768px) {
+    /* button {
+        transform: translateX(0%);
+    } */
+}
+
+/* @media (width < 768px) {
     .cards {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 2rem;
     }
-}
+} */
 </style>

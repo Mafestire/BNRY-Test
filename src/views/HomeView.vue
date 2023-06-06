@@ -134,19 +134,16 @@ export default {
 
 .showcase {
   background-color: white;
-  /* height: 80vh; */
   width: 100%;
   overflow: hidden;
-
 }
 
 .showcase .case {
   background-color: white;
-  /* height: 100vh; */
   transform: translateY(5%);
   margin-left: auto;
   margin-right: auto;
-  width: 60rem;
+  width: 80rem;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -155,7 +152,6 @@ export default {
 .item {
   background-color: white;
   width: 100rem;
-  /* height: ; */
   margin-left: -10rem;
   margin-right: auto;
   display: flex;
@@ -212,11 +208,15 @@ form input {
   text-align: center;
   width: 20rem;
   border: none;
-  border-bottom: 1px solid #000;
+  color: black;
+  border-bottom: 1px solid #2776EA;
+  color: #2776EA;
+  font-size: 1.3rem;
 }
 
 form label {
   font-size: 1.5rem;
+  color: black;
 
 }
 
@@ -225,42 +225,69 @@ form button {
   border-radius: 10%;
   color: #2776EA;
   font-size: 1.2rem;
+  font-weight: 600;
+  border: 1px solid #2776EA;
+  padding: .3rem;
+  transition: .7s ease-in;
+
+}
+
+form button:hover{
+  background-color: #2776EA;
+  color: white;
+  transition: .7s ease-in;
+}
+
+.colour{
+  display: flex;
 }
 
 .colour img {
   height: 10rem;
   width: 40rem;
-  margin-left: -44.7em;
   transform: translateY(160%);
   position: absolute;
 }
 
 .newsletter {
-  /* width: 55rem; */
   margin-bottom: 5rem;
   margin-top: 5rem;
   display: flex;
+  flex-direction: row;
   margin-left: auto;
   margin-right: auto;
-  justify-content: center;
-  /* transform: translateX(30%); */
+  justify-content: space-around;
+  align-items: center;
 }
 
-.newsletter .socials {
-  width: 20rem;
-  margin-right: 5rem;
-  margin-top: 1rem;
+.socials {
+  width: 30rem;
+  margin-top: -10rem;
 }
 
-.socials p {
-  font-size: 1.5rem;
+.socials i:hover{
+  color: #2776EA;
+  transition: .7s ease-in;
+
+}
+
+.socials i{
+  transition: .7s ease-in;
+  font-size: 1.9rem;
+}
+
+.socials p, .socials h4 {
+  font-size: 1.7rem;
+  color: black;
+
 }
 
 .letter p {
   font-size: 1.2rem;
+  color: black;
 }
 
-@media (width < 530px) {
+@media (width < 800px) {
 
   .info h1 {
     font-size: 2rem;
@@ -293,11 +320,11 @@ form button {
 
   .showcase .case {
     background-color: white;
-    /* height: 100vh; */
+    height: 40vh;
     transform: translateY(5%);
     margin-left: auto;
     margin-right: auto;
-    width: 22rem;
+    width: 16rem;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -325,25 +352,21 @@ form button {
   }
 
   .newsletter {
-    /* width: 15rem; */
+    width: 10rem;
     margin-bottom: 5rem;
-    margin-top: 5rem;
-    display: grid;
-    grid-template-columns: repeat(1, .5ft);
-    grid-template-rows: repeat(2, .5fr);
+    display: flex;
+    flex-direction: column;
     margin-left: auto;
-    
   }
 
   .moreNews {
     text-decoration: none;
     font-size: 1rem;
-    /* width: 15rem; */
     transform: translateX(0%)
   }
 
   form {
-    /* width: 15rem; */
+    width: 15rem;
     margin-left: auto;
     margin-right: auto;
     margin-top: 3rem;
@@ -351,7 +374,7 @@ form button {
 
   form input {
     text-align: center;
-    /* width: 15rem; */
+    width: 10rem;
     border: none;
     border-bottom: 1px solid #000;
   }
@@ -361,18 +384,18 @@ form button {
 
   }
 
-  .newsletter .socials {
-    /* width: 15rem; */
+  .newsletter  {
+    width: 11rem;
     margin-right: auto;
     margin-left: auto;
-    margin-top: 4rem;
+    margin-top: 14rem;
+    font-size: 1rem;
   }
 
-  .newsletter .letter{
-    margin-left: auto;
-    margin-right: auto;
+  .socials{
+    width: 17rem;
+    margin-bottom: 1rem;
   }
-
   .colour img {
     height: 10rem;
     width: 40rem;
@@ -446,7 +469,7 @@ form button {
   }
 } */
 
-@media (width < 720px) {
+/* @media (width < 720px) {
   .item .card1 {
     width: 15rem;
     margin-left: 2rem;
@@ -507,5 +530,5 @@ form button {
     transform: translateY(250%);
     position: absolute;
   }
-}
+} */
 </style>

@@ -66,11 +66,10 @@ export default {
 </script>
 
 <style scoped>
-/* .nav-link .active {
-  color: #42b983;
-} */
+
 .navbar {
   background-color: #2776EA;
+  color: white;
 }
 
 .name {
@@ -79,7 +78,7 @@ export default {
 }
 
 .nav-items {
-  font-size: 1.3rem;
+  font-size: 1.7rem;
   margin-left: 60rem;
 }
 
@@ -87,14 +86,20 @@ export default {
   color: white;
   text-decoration: none;
   margin-left: 2rem;
+  transition: .7s ease-out;
 }
 
-input,
+.nav-item a:hover{
+  color: black;
+  transition: .7s ease-in;
+}
+
+/* input,
 button {
   transform: translateX(-30%);
   border: 2px solid #2e1f21;
   color: #2e1f21;
-}
+} */
 
 @media (width < 800px) {
   .nav-items {
