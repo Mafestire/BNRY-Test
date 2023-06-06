@@ -39,7 +39,7 @@ app.get('/', (req, res) => {
         sources: 'engadget',
         domains: ' techcrunch.com',
         from: '2023-06-05',
-        to: '2023-12-12',
+        to: '2022-08-12',
         language: 'en',
         sortBy: 'relevancy',
     }).then(response => {
